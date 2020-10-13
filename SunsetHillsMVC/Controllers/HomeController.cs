@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -25,6 +26,24 @@ namespace SunsetHillsMVC.Controllers
 
         public IActionResult Privacy()
         {
+            return View();
+        }
+
+        public IActionResult Solution()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Solution(int b1, int b2, int b3, int b4, int b5)
+        {
+            var data = new StringBuilder();
+            data.Append(b1.ToString());
+            data.Append(b2.ToString());
+            data.Append(b3.ToString());
+            data.Append(b4.ToString());
+            data.Append(b5.ToString());
+            ViewData["Data"] = data;
             return View();
         }
 

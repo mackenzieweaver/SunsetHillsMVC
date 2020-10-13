@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Solution";
+}
+
+<div class="row">
+    <h1>@ViewData["Title"]</h1>
+</div>
+
+<div class="row">
+    <p>Enter in a number between 1 and 100 into each of the input fields. These numbers will represent how many floors are in each building. Since the sun sets in the west, the left-most building will always be able to see the sunset. The algorithm will tell you of the rest of the buildings which ones can see the sunset. If the left most building is the tallest, none of the others will be able to see.</p>
+</div>
+
+<div class="row">
+    <form asp-action="Solution">
+        <input name="b1" type="number" min="1" max="100" value="1" oninput="validity.valid || (value = '')" />
+        <input name="b2" type="number" min="1" max="100" value="1" oninput="validity.valid || (value = '')" />
+        <input name="b3" type="number" min="1" max="100" value="1" oninput="validity.valid || (value = '')" />
+        <input name="b4" type="number" min="1" max="100" value="1" oninput="validity.valid || (value = '')" />
+        <input name="b5" type="number" min="1" max="100" value="1" oninput="validity.valid || (value = '')" />
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<div class="row">
+    @ViewData["Data"]
+</div>
