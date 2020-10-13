@@ -2,7 +2,7 @@
  
 ![Solution Page](https://github.com/mackenzieweaver/SunsetHillsMVC/blob/main/SunsetHillsMVC/sunsethillsmvc.png)
 
-Why did I make Sunset Hills, again...?
+### Why did I make Sunset Hills, again...?
 
 Because this time it's built with ASP.NET Core MVC.
 
