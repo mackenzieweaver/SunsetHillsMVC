@@ -37,13 +37,39 @@ namespace SunsetHillsMVC.Controllers
         [HttpPost]
         public IActionResult Solution(int b1, int b2, int b3, int b4, int b5)
         {
-            var data = new StringBuilder();
-            data.Append(b1.ToString());
-            data.Append(b2.ToString());
-            data.Append(b3.ToString());
-            data.Append(b4.ToString());
-            data.Append(b5.ToString());
-            ViewData["Data"] = data;
+            int[] arr = { b1, b2, b3, b4, b5 };
+            var results = new List<string>();
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i == 0)
+                {
+                    results.Add("Sun");
+                    continue;
+                }
+                bool bigger = false;
+                for (int j = 0; j < i; j++)
+                {
+                    if(arr[j] >= arr[i])
+                    {
+                        bigger = true;
+                        break;
+                    } 
+                    else
+                    {
+                        continue;
+                    }
+                }
+                if (bigger)
+                {
+                    results.Add("Shade");
+                }
+                else
+                {
+                    results.Add("Sun");
+                }
+            }
+            ViewData["Input"] = string.Join(", ", arr);
+            ViewData["Data"] = string.Join(", ", results);
             return View();
         }
 
